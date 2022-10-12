@@ -29,11 +29,14 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_weight="0.4"
-            android:orientation="vertical">
+            android:orientation="vertical"
+            android:layout_marginLeft="@dimen/login_horizontalMargin"
+            android:layout_marginRight="@dimen/login_horizontalMargin">
 
             <com.google.android.material.textfield.TextInputLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content">
+                android:layout_height="wrap_content"
+                android:theme="@style/EdiTextwhite">
 
                 <com.google.android.material.textfield.TextInputEditText
                     android:layout_width="match_parent"
@@ -45,7 +48,9 @@
 
             <com.google.android.material.textfield.TextInputLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content">
+                android:layout_height="wrap_content"
+                android:theme="@style/EdiTextwhite"
+                android:layout_marginTop="@dimen/login_marginTop">
 
                 <com.google.android.material.textfield.TextInputEditText
                     android:layout_width="match_parent"
@@ -53,6 +58,15 @@
                     android:hint="@string/contrasena"
                     android:inputType="textPassword"></com.google.android.material.textfield.TextInputEditText>
             </com.google.android.material.textfield.TextInputLayout>
+            
+            
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/button_text"
+                android:layout_marginTop="@dimen/login_marginTop"
+                android:theme="@style/RaiseButtonDark"/>
+            >
 
 
         </LinearLayout>
