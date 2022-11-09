@@ -9,5 +9,7 @@
     <color name="editText_black">#000000</color>
     
     <color name="textView_textColor">#FFFFFF</color>
+    <color name="backgroud_cardview">#33000000</color>
+    <color name="textColor_White">#FFFFFF</color>
 
 </resources>

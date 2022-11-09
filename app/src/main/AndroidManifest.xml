@@ -22,7 +22,7 @@
             android:parentActivityName=".LoginActivity">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value=".LoginActivity"/> 
+                android:value=".LoginActivity"/>
         </activity>
     </application>
 
