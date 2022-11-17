@@ -2,13 +2,22 @@ package com.example.infogram.view.fragment;
 
 import android.os.Bundle;
 
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
 import androidx.fragment.app.Fragment;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.LinearLayout;
 
 import com.example.infogram.R;
+import com.example.infogram.adapter.CardViewAdapter;
+import com.example.infogram.model.Image;
+
+import java.util.ArrayList;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -61,6 +70,50 @@ public class HomeFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_home, container, false);
+        View view =inflater.inflate(R.layout.fragment_home, container, false);
+
+        //toolbar
+        showToolbar(getString(R.string.title_home_fragment), false, view);
+
+        //recyclerview
+        RecyclerView recyclerView = view.findViewById(R.id.recycler_view);
+
+        //layout managar
+        LinearLayoutManager linearLayoutManager = new LinearLayoutManager(getContext());
+        linearLayoutManager.setOrientation(LinearLayoutManager.VERTICAL);
+        recyclerView.setLayoutManager(linearLayoutManager);
+
+        //el adapter
+
+
+        CardViewAdapter cardViewAdapter = new CardViewAdapter(buidImages(),R.layout.cardview_image, getActivity());
+        recyclerView.setAdapter(cardViewAdapter);
+        return view;
+    }
+
+    public void showToolbar(String titulo, Boolean botonSubir, View view) {
+        Toolbar toolbar = view.findViewById(R.id.toolbar);
+        ((AppCompatActivity)getActivity()).setSupportActionBar(toolbar);
+
+        ((AppCompatActivity)getActivity()).getSupportActionBar().setTitle(titulo);
+        ((AppCompatActivity)getActivity()).getSupportActionBar().setDisplayHomeAsUpEnabled(botonSubir);
+    }
+
+    //creamos lista de imagenes
+    public ArrayList<Image> buidImages(){
+        ArrayList<Image> images = new ArrayList<>();
+
+        images.add( new Image ("", "Carlos Valdias", "2dias" ,"1 me gusta"));
+        images.add( new Image ("", "Juan Torrico", "11 dias" ,"2 me gusta"));
+        images.add( new Image ("", "Pepe Valdias", "9 dias" ,"3 me gusta"));
+        images.add( new Image ("", "Carlos Flores", "8 dias" ,"4 me gusta"));
+        images.add( new Image ("", "Alejandro Mercado", "6 dias" ,"5 me gusta"));
+        images.add( new Image ("", "Tito Rojas", "3 dias" ,"6 me gusta"));
+        images.add( new Image ("", "Dani Espinosa", "22 dias" ,"7 me gusta"));
+        images.add( new Image ("", "Jose Angulo", "12 dias" ,"8 me gusta"));
+        images.add( new Image ("", "Alverth Tata", "23 dias" ,"8 me gusta"));
+        images.add( new Image ("", "Vivian katara", "5 dias" ,"10 me gusta"));
+
+        return images;
     }
 }

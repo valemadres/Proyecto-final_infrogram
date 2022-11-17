@@ -9,22 +9,21 @@
 
     <include layout="@layout/appbar_toolbar"/>
 
-    <LinearLayout
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recycler_view"
+
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:orientation="vertical"
-        app:layout_behavior="com.google.android.material.appbar.AppBarLayout$Behavior">
-
-
-        <include layout="@layout/cardview_image"/>
-        <include layout="@layout/cardview_image"/>
-
-    </LinearLayout>
+        android:paddingLeft="@dimen/padding_card"
+        android:paddingTop="@dimen/padding_card"
+        android:paddingRight="@dimen/padding_card"
+        app:layout_behavior="com.google.android.material.appbar.AppBarLayout$ScrollingViewBehavior" />
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="bottom|end"
         android:layout_margin="@dimen/margin_fab"
+
         android:src="@drawable/plus" />
 </androidx.coordinatorlayout.widget.CoordinatorLayout>
