@@ -1,6 +1,8 @@
 package com.example.infogram.adapter;
 
 import android.app.Activity;
+import android.content.Intent;
+import android.graphics.ImageDecoder;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -13,6 +15,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.infogram.R;
 import com.example.infogram.model.Image;
+import com.example.infogram.view.ImageDetailActivity;
 
 import java.util.ArrayList;
 
@@ -41,10 +44,19 @@ public class CardViewAdapter extends RecyclerView.Adapter<CardViewAdapter.CardVi
 
         Image image = images.get(position);
         //image
-        Picasso.get().load(image.getUrlImagen()).into(holder.imageCardView);
+
         holder.usernameCardView.setText(image.getUsername());
         holder.cantidadDiasCardView.setText(image.getCantidadDias());
         holder.cantidadMeGutaCardView.setText(image.getCantidadDias());
+
+        //oclickListener
+        holder.imageCardView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(activity, ImageDetailActivity.class);
+                activity.startActivity(intent);
+            }
+        });
 
 
     }

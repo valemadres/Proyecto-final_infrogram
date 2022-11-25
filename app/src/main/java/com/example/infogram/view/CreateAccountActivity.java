@@ -14,11 +14,11 @@ public class CreateAccountActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_create_account);
 
-        showToolbar(getString(R.string.title_crear_cuenta) , true);
+        showToolbar("", true);
     }
 
     public void showToolbar(String titulo, Boolean botonSubir) {
-        Toolbar toolbar = findViewById(R.id.toolbar);
+        Toolbar toolbar = findViewById(R.id.toolbar_image_detail);
         setSupportActionBar(toolbar);
 
         getSupportActionBar().setTitle(titulo);
